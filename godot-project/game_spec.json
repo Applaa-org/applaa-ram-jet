@@ -1,0 +1,61 @@
+{
+  "game": {
+    "name": "Ram Jet",
+    "type": "2D",
+    "genre": "shooter",
+    "description": "Fast-paced aerial combat game where you survive 1 minute of enemy attacks"
+  },
+  "settings": {
+    "window": {
+      "width": 1024,
+      "height": 600
+    },
+    "physics": {
+      "gravity": 0
+    }
+  },
+  "player": {
+    "name": "Player Plane",
+    "health": 1,
+    "speed": 200,
+    "abilities": ["shoot"]
+  },
+  "entities": {
+    "enemies": [
+      {
+        "name": "Enemy Plane",
+        "health": 1,
+        "speed": 250,
+        "damage": 1,
+        "behavior": "approach and dodge"
+      }
+    ],
+    "projectiles": [
+      {
+        "name": "Player Bullet",
+        "speed": 800,
+        "damage": 1
+      },
+      {
+        "name": "Enemy Bullet",
+        "speed": 600,
+        "damage": 1
+      }
+    ]
+  },
+  "levels": [
+    {
+      "name": "Main Game",
+      "background": "sky with clouds",
+      "obstacles": [],
+      "duration": 60
+    }
+  ],
+  "logic": {
+    "winCondition": "survive_60_seconds",
+    "loseCondition": "hit_by_enemy_bullet",
+    "scoring": {
+      "pointsPerKill": 100
+    }
+  }
+}
